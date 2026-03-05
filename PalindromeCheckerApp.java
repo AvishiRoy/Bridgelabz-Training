@@ -42,6 +42,10 @@ public class PalindromeCheckerApp {
 
         System.out.println("LinkedList Method: " + linkedListPalindrome(word));
 
+
+        System.out.println("Recursive Method: " +
+                recursivePalindrome(word,0,word.length()-1));
+
     }
 
     // UC3 – String Reverse
@@ -154,6 +158,19 @@ public class PalindromeCheckerApp {
         }
 
         return true;
+    }
+
+    public static boolean recursivePalindrome(String word, int left, int right){
+
+        if(left >= right){
+            return true;
+        }
+
+        if(word.charAt(left) != word.charAt(right)){
+            return false;
+        }
+
+        return recursivePalindrome(word, left + 1, right - 1);
     }
 
 }
