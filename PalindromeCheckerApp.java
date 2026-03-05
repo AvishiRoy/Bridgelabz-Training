@@ -52,6 +52,10 @@ public class PalindromeCheckerApp {
 
         PalindromeService service = new PalindromeService();
         System.out.println("Service Method: " + service.checkPalindrome(word));
+        
+
+        PalindromeStrategy strategy = new StackStrategy();
+        System.out.println("Strategy Method: " + strategy.check(word));
 
     }
 
@@ -199,6 +203,6 @@ public class PalindromeCheckerApp {
 
         return true;
     }
-}
+
 
 
