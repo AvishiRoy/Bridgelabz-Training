@@ -22,61 +22,15 @@ public class PalindromeCheckerApp {
     }
 
     // UC3 Method
-    public static boolean checkPalindrome(String word){
-
-        char[] arr = word.toCharArray();
-
-        int left = 0;
-        int right = arr.length - 1;
-
-        while(left < right){
-
-            if(arr[left] != arr[right]){
-                return false;
-            }
-
-            left++;
-            right--;
-        }
-
-        return true;
-    }
-
-    public static boolean stackPalindrome(String word){
-
-        Stack<Character> stack = new Stack<>();
-
-        for(char c : word.toCharArray()){
-            stack.push(c);
-        }
+    public static boolean reversePalindrome(String word){
 
         String reversed = "";
 
-        while(!stack.isEmpty()){
-            reversed += stack.pop();
+        for(int i = word.length() - 1; i >= 0; i--){
+            reversed += word.charAt(i);
         }
 
         return word.equals(reversed);
-    }
-
-    public static boolean dequePalindrome(String word){
-
-        ArrayDeque<Character> deque = new ArrayDeque<>();
-
-        for(char c : word.toCharArray()){
-            deque.add(c);
-        }
-
-        while(deque.size() > 1){
-
-            if(deque.removeFirst() != deque.removeLast()){
-                return false;
-            }
-
-        }
-
-        return true;
-
     }
 
 }
