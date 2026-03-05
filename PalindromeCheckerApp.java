@@ -39,6 +39,9 @@ public class PalindromeCheckerApp {
         // UC6
         System.out.println("Queue + Stack Method: " + queueStackPalindrome(word));
 
+
+        System.out.println("LinkedList Method: " + linkedListPalindrome(word));
+
     }
 
     // UC3 – String Reverse
@@ -112,7 +115,7 @@ public class PalindromeCheckerApp {
         return true;
     }
 
-    // UC6 Queue + Stack Based Palindrome Check
+    // UC6 Queue+Stack Based Palindrome Check
     public static boolean queueStackPalindrome(String word){
 
         Stack<Character> stack = new Stack<>();
@@ -126,6 +129,25 @@ public class PalindromeCheckerApp {
         while(!stack.isEmpty()){
 
             if(stack.pop() != queue.remove()){
+                return false;
+            }
+
+        }
+
+        return true;
+    }
+
+    public static boolean linkedListPalindrome(String word){
+
+        LinkedList<Character> list = new LinkedList<>();
+
+        for(char c : word.toCharArray()){
+            list.add(c);
+        }
+
+        while(list.size() > 1){
+
+            if(list.removeFirst() != list.removeLast()){
                 return false;
             }
 
