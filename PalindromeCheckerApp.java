@@ -57,6 +57,9 @@ public class PalindromeCheckerApp {
         PalindromeStrategy strategy = new StackStrategy();
         System.out.println("Strategy Method: " + strategy.check(word));
 
+
+        performanceTest(word);
+
     }
 
     // UC3 – String Reverse
@@ -202,6 +205,17 @@ public class PalindromeCheckerApp {
         }
 
         return true;
+    }
+
+    public static void performanceTest(String word){
+
+        long start = System.nanoTime();
+
+        reversePalindrome(word);   // existing method you already wrote
+
+        long end = System.nanoTime();
+
+        System.out.println("Execution Time: " + (end - start) + " ns");
     }
 }
 
