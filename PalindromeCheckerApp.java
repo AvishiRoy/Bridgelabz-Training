@@ -1,4 +1,5 @@
 import java.util.Stack;
+import java.util.ArrayDeque;
 
 public class PalindromeCheckerApp {
 
@@ -56,6 +57,26 @@ public class PalindromeCheckerApp {
         }
 
         return word.equals(reversed);
+    }
+
+    public static boolean dequePalindrome(String word){
+
+        ArrayDeque<Character> deque = new ArrayDeque<>();
+
+        for(char c : word.toCharArray()){
+            deque.add(c);
+        }
+
+        while(deque.size() > 1){
+
+            if(deque.removeFirst() != deque.removeLast()){
+                return false;
+            }
+
+        }
+
+        return true;
+
     }
 
 }
