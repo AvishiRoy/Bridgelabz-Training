@@ -2,8 +2,6 @@ public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        System.out.println("Palindrome Checker Application");
-
         String word = "madam";
 
         String reversed = "";
@@ -18,6 +16,27 @@ public class PalindromeCheckerApp {
             System.out.println(word + " is not a palindrome");
         }
 
+    }
+
+    // UC3 Method
+    public static boolean checkPalindrome(String word){
+
+        char[] arr = word.toCharArray();
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while(left < right){
+
+            if(arr[left] != arr[right]){
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
     }
 
 }
