@@ -46,6 +46,11 @@ public class PalindromeCheckerApp {
         System.out.println("Recursive Method: " +
                 recursivePalindrome(word,0,word.length()-1));
 
+
+        System.out.println("Ignore Case Method: " + ignoreCasePalindrome(word));
+
+        
+
     }
 
     // UC3 – String Reverse
@@ -173,4 +178,23 @@ public class PalindromeCheckerApp {
         return recursivePalindrome(word, left + 1, right - 1);
     }
 
+    public static boolean ignoreCasePalindrome(String word){
+
+        word = word.replaceAll("\\s+","").toLowerCase();
+
+        int left = 0;
+        int right = word.length()-1;
+
+        while(left < right){
+
+            if(word.charAt(left) != word.charAt(right)){
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
 }
