@@ -112,7 +112,7 @@ public class PalindromeCheckerApp {
         return true;
     }
 
-    // UC6 – Queue + Stack
+    // UC6 Queue + Stack Based Palindrome Check
     public static boolean queueStackPalindrome(String word){
 
         Stack<Character> stack = new Stack<>();
