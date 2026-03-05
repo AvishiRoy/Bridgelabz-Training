@@ -49,7 +49,9 @@ public class PalindromeCheckerApp {
 
         System.out.println("Ignore Case Method: " + ignoreCasePalindrome(word));
 
-        
+
+        PalindromeService service = new PalindromeService();
+        System.out.println("Service Method: " + service.checkPalindrome(word));
 
     }
 
@@ -198,3 +200,5 @@ public class PalindromeCheckerApp {
         return true;
     }
 }
+
+
